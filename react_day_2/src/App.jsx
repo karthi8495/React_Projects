@@ -24,7 +24,7 @@ function App() {
     }];
   return (
     <>
-      <List  list = {stories}/>
+      <List  list = {stories} name="Karthikeyan" />
     
     </>
   )
@@ -34,27 +34,29 @@ function App() {
 function List(props) {
 
   return (
-     <ul>
-      {props.list.map((item) => (
-        <li key={item.id}>
-          <span>
-            <a href={item.url}>{item.title}</a>
-          </span>
-          <span>{item.author}</span>
-          
-        </li>
-      ))}
-
-     </ul>
+    <div>
+      <Item name={props.name} />
+      <ul>
+        {props.list.map((item) => (
+          <li key={item.id}>
+            <span>
+              <a href={item.url}>{item.title}</a>
+            </span>
+            <span>{item.author}</span> 
+          </li>
+        ))}
+      </ul>
+      <span>{props.name}</span>
+    </div>
     
   )
 }
 
 // Componenets no 3
-function Item() {
- 
+function Item(props) {
+  
   return (
-    <div>Item</div>
+    <div>{props.name}</div>
   )
 }
 
