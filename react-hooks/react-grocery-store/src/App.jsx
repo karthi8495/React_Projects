@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     console.log('Count Updated');
-  },[count]);
+  },[count]); 
 
   return (
     <div>
