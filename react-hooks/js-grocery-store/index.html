@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Grocery Store</title>
+    <style>
+         body{
+            background-color: cadetblue;
+         }
+        #app{
+            text-align: center;
+            margin-top: 50px;
+        }
+        #price-board{
+            margin-top: 20px;
+        }
+        #price-board p {
+            margin: 5px 0;
+        }
+        button {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Grocery Store</h1>
+        <div id="price-board">
+            <p id="apple">Apples: 200 Rs.</p>
+            <p>Bananas: 150 Rs.</p>
+        </div>
+        <button onclick="updatePrices()">Update Prices</button>
+    </div>
+
+    <script>
+        function updatePrices() {
+            // const price_board = document.getElementById("price-board");
+            // price_board.innerHTML = "<p>Apples: 250 Rs.</p><p>Bananas: 180 Rs.</p>";
+            const apple = document.getElementById("apple");
+            apple.innerHTML = "Apples: 250 Rs.";
+        }
+    </script>
+</body>
+</html>
