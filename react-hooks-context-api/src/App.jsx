@@ -1,38 +1,30 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Profile from './Profile'
-
-
-const john = {
-  name: 'John',
-  course: 'Devops'
-}
-
-const jack = {
-  name: 'Jack',
-  course: 'FSD - FullStack Development'
-}
+import { UserContext, UserContextProvider } from './UserContext'
 
 
 
 function App() {
-  
-  const [user,setUser] = useState(john);
-  const toggleuser = () => {
-    if(user === john) {
-      setUser(jack);
-    }else {
-      setUser(john);
-    }
-  }
-
   return (
     <main>
-      <Profile user={user}/>
-      <button onClick={toggleuser}>Toggle User</button>
+      <UserContextProvider>
+          <AppInternal />
+      </UserContextProvider>
+      
     </main>
+  )
+}
+
+function AppInternal() {
+  const {toggleUser} = useContext(UserContext);
+  return (
+    <>
+     <Profile />
+     <button onClick={toggleUser}>Toggle User</button>
+    </>
   )
 }
 
